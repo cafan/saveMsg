@@ -19,8 +19,8 @@ func NewSaveMsg(path string)*SaveMsg{
 func GetCallerInfo(sve *SaveMsg)(){
 	pc,_,_,_:=runtime.Caller(1)
 	callerFunc:=runtime.FuncForPC(pc)
-	sve.callerFileName,_=callerFunc.FileLine(pc)
-	sve.callerFuncName=callerFunc.Name()
+	sve.CallerFileName,_=callerFunc.FileLine(pc)
+	sve.CallerFuncName=callerFunc.Name()
 }
 // SaveMsgInPath is aim to save the message in the pointed path
 // 1. get the caller function Name if setted before
